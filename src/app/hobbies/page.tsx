@@ -64,8 +64,8 @@ export default function Hobbies() {
               return (
                 <li key={label}>
                   <Button
-                      onClick={() => router.push(url)}
-                      className={`inline-block px-3 sm:px-4 py-2 text-white rounded-lg shadow-lg 
+                    onClick={() => router.push(url)}
+                    className={`inline-block px-3 sm:px-4 py-2 text-white rounded-lg shadow-lg 
                       backdrop-blur-md transition-transform duration-300 transform-gpu
                       ${isActive ? "bg-red-600/60 border border-red-500/70 scale-110" : "hover:bg-red-600/60 hover:scale-110"}`}
                   >
@@ -78,8 +78,12 @@ export default function Hobbies() {
         </div>
       </div>
 
-      <section className="relative z-10 max-w-[90%] sm:max-w-[85%] mx-auto mt-40 md:mt-48 px-4 sm:px-6 md:px-6 lg:px-6 py-16 sm:py-20 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-10">
-        <div className="flex-1 flex flex-col space-y-4 sm:space-y-6 text-center md:text-left pl-0 md:pl-20">
+      <section className="relative z-10 w-[92%] sm:w-[88%] md:w-[85%] mx-auto mt-40 md:mt-48 
+        px-4 sm:px-6 md:px-6 lg:px-6 py-16 sm:py-20 bg-white/5 backdrop-blur-xl 
+        rounded-3xl border border-white/10 shadow-2xl flex flex-col md:flex-row 
+        items-center justify-between gap-8 sm:gap-10">
+
+        <div className="flex-1 flex flex-col space-y-4 sm:space-y-6 text-center md:text-left md:pl-20">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-lg">
             Hobbies
           </h1>
@@ -121,7 +125,7 @@ export default function Hobbies() {
         </div>
 
         <div className="flex-1 flex justify-center mt-8 md:mt-0">
-          <div className="w-48 sm:w-64 md:w-[420px] lg:w-[520px] xl:w-[600px] animate-float rounded-3xl overflow-visible shadow-2xl">
+          <div className="w-48 sm:w-64 md:w-[380px] lg:w-[450px] xl:w-[520px] animate-float rounded-3xl overflow-visible shadow-2xl">
             <Carousel className="rounded-2xl shadow-2xl bg-black/40 border border-white/10 p-0">
               <CarouselContent>
                 <CarouselItem>
@@ -133,14 +137,14 @@ export default function Hobbies() {
 
                 <CarouselItem>
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                    <img src="/images/guitarr.jpg" className="w-full h-full object-cover" />
+                    <img src="/images/guitarr.jpg" className="w-full h-full object-bg" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/60" />
                   </div>
                 </CarouselItem>
 
                 <CarouselItem>
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                    <img src="/images/earphones.jpg" className="w-full h-full object-cover" />
+                    <img src="/images/earphones.jpg" className="w-full h-full object-bg" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/60" />
                   </div>
                 </CarouselItem>

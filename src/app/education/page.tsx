@@ -37,24 +37,26 @@ export default function Education() {
             : "bg-gray-800"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center flex-wrap gap-4">
-          <div className="flex items-center space-x-6">
-            <img src="/images/cat.jpg" alt="Logo" className="w-16 h-16 rounded-full object-cover" />
-            <h1 className="text-4xl font-bold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-6 lg:px-6 py-6 flex justify-between items-center flex-wrap gap-4">
+          <div className="flex items-center space-x-4 md:space-x-6">
+            <img src="/images/cat.jpg" alt="Logo" className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover" />
+            <h1 className="text-2xl sm:text-4xl font-bold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               MY PORTFOLIO
             </h1>
           </div>
 
-          <ul className="flex flex-wrap items-center gap-4">
+          <ul className="flex flex-wrap items-center gap-2 md:gap-4">
             {navItems.map(([label, url]) => {
               const isActive = pathname === url;
               return (
                 <li key={label}>
                   <Button
                     onClick={() => router.push(url)}
-                    className={`inline-block px-4 py-2 text-white rounded-lg shadow-lg 
-                      backdrop-blur-md transition-transform duration-300 transform-gpu
-                      ${isActive ? "bg-red-600/60 border border-red-500/70 scale-110" : "hover:bg-red-600/60 hover:scale-110"}`}
+                    className={`px-3 sm:px-4 py-2 text-white rounded-lg shadow-lg transition-transform duration-300 transform-gpu backdrop-blur-md ${
+                      isActive
+                        ? "bg-red-600/60 border border-red-500/70 scale-110"
+                        : "hover:bg-red-600/60 hover:scale-110"
+                    }`}
                   >
                     {label}
                   </Button>
@@ -65,13 +67,17 @@ export default function Education() {
         </div>
       </div>
 
-      <section className="relative z-10 max-w-[90%] sm:max-w-[85%] mx-auto mt-40 md:mt-48 px-4 sm:px-6 md:px-20 py-16 sm:py-20 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-10 overflow-x-auto">
+      <section className="relative z-10 w-[92%] sm:w-[88%] md:w-[85%] mx-auto 
+        mt-40 md:mt-48 px-4 sm:px-6 md:px-10 lg:px-20 py-16 sm:py-20 
+        bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl 
+        flex flex-col md:flex-row items-center justify-between gap-10">
+
         <div className="flex-1 flex flex-col space-y-6 min-w-[280px]">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-lg">
             Education
           </h1>
 
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-200 mb-4">
+          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-200 mb-4">
             <ul className="list-disc list-inside text-gray-200 space-y-2">
               <li>Elementary - Concepcion Grande Elementary School</li>
               <li>Highschool - Camarines Sur National Highschool</li>
@@ -118,6 +124,7 @@ export default function Education() {
             </Carousel>
           </div>
         </div>
+
       </section>
     </div>
   );

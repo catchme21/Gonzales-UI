@@ -37,26 +37,26 @@ export default function About() {
             : "bg-gray-800"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center flex-wrap gap-4">
-          <div className="flex items-center space-x-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-6 lg:px-6 py-6 flex justify-between items-center flex-wrap gap-4">
+          <div className="flex items-center space-x-4 md:space-x-6">
             <img 
               src="/images/cat.jpg" 
               alt="Logo" 
-              className="w-16 h-16 rounded-full object-cover" 
+              className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover" 
             />
-            <h1 className="text-4xl font-bold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <h1 className="text-2xl sm:text-4xl font-bold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               MY PORTFOLIO
             </h1>
           </div>
 
-          <ul className="flex flex-wrap items-center gap-4">
+          <ul className="flex flex-wrap items-center gap-2 md:gap-4">
             {navItems.map(([label, url]) => {
               const isActive = pathname === url;
               return (
                 <li key={label}>
                   <Button
                     onClick={() => router.push(url)}
-                    className={`inline-block px-4 py-2 text-white rounded-lg shadow-lg 
+                    className={`inline-block px-3 sm:px-4 py-2 text-white rounded-lg shadow-lg 
                       backdrop-blur-md transition-transform duration-300 transform-gpu
                       ${isActive ? "bg-red-600/60 border border-red-500/70 scale-110" : "hover:bg-red-600/60 hover:scale-110"}`}
                   >
@@ -69,17 +69,21 @@ export default function About() {
         </div>
       </div>
 
-      <section className="relative z-10 max-w-[85%] mx-auto mt-40 md:mt-48 px-30 py-20 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-10 overflow-x-auto">
-        <div className="flex-1 flex flex-col space-y-6 min-w-[300px]">
-          <h1 className="text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-lg">
+      <section className="relative z-10 w-[92%] sm:w-[88%] md:w-[85%] mx-auto 
+        mt-40 md:mt-48 px-4 sm:px-6 md:px-10 lg:px-20 py-16 sm:py-20 
+        bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl 
+        flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+
+        <div className="flex-1 flex flex-col space-y-6 min-w-[280px]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-lg">
             About Me
           </h1>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-200">
-           This is Lyndon Gonzales the creator of this portfolio website.
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-200">
+            This is Lyndon Gonzales the creator of this portfolio website.
           </h2>
 
-          <p className="text-gray-300 max-w-md">
+          <p className="text-gray-300 max-w-md text-sm sm:text-base md:text-lg">
             I'm currently a student at Naga College Foundation pursuing a degree in Bachelor of Science in Computer Science, learning and honing my skills in Web Development.
             Last year i learned the basic concepts of Web Development using HTML, CSS, and JavaScript and the other language which is C and Python. This year, I decided to level up my skills by 
             learning modern web development frameworks like NextJS and TailwindCSS to create more dynamic and visually appealing web applications.
@@ -87,14 +91,14 @@ export default function About() {
 
           <Button
             onClick={() => router.push("/")}
-            className="w-fit mt-6 px-6 py-3 bg-red-600/30 border border-red-500/60 text-white rounded-lg shadow-lg hover:bg-red-600/60 transition duration-300 backdrop-blur-md"
+            className="w-fit mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 bg-red-600/30 border border-red-500/60 text-white rounded-lg shadow-lg hover:bg-red-600/60 transition duration-300 backdrop-blur-md"
           >
             Back
           </Button>
         </div>
 
-        <div className="flex-1 flex justify-center min-w-[420px] md:min-w-[520px] lg:min-w-[600px] mt-8 md:mt-0">
-          <div className="w-[420px] md:w-[520px] lg:w-[600px] animate-float rounded-3xl overflow-visible shadow-2xl flex-shrink-0">
+        <div className="flex-1 flex justify-center mt-8 md:mt-0">
+          <div className="w-48 sm:w-64 md:w-[380px] lg:w-[450px] xl:w-[520px] 2xl:w-[600px] animate-float rounded-3xl overflow-visible shadow-2xl">
             <Card className="p-0 rounded-2xl overflow-hidden shadow-2xl bg-black/40 border border-white/10">
               <CardContent className="relative aspect-[4/3] p-0">
                 <div
@@ -106,6 +110,7 @@ export default function About() {
             </Card>
           </div>
         </div>
+
       </section>
     </div>
   );

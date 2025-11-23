@@ -10,7 +10,6 @@ export default function Contact() {
   const router = useRouter();
   const pathname = usePathname();
 
-  
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -49,12 +48,11 @@ export default function Contact() {
 
     console.log("Message sent:", formData);
     alert("Message sent successfully!");
-    setFormData({ name: "", phone: "", email: "", message: "" }); 
+    setFormData({ name: "", phone: "", email: "", message: "" });
   };
 
   return (
     <div className="w-full min-h-screen bg-black font-sans relative overflow-hidden">
-      {/* NAVBAR */}
       <div
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrollY > 50
@@ -62,26 +60,26 @@ export default function Contact() {
             : "bg-gray-800"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-          <div className="flex items-center space-x-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-6 lg:px-6 py-6 flex justify-between items-center flex-wrap gap-4">
+          <div className="flex items-center space-x-4 md:space-x-6">
             <img 
               src="/images/cat.jpg" 
               alt="Logo" 
-              className="w-16 h-16 rounded-full object-cover" 
+              className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover" 
             />
-            <h1 className="text-4xl font-bold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <h1 className="text-2xl sm:text-4xl font-bold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               MY PORTFOLIO
             </h1>
           </div>
 
-          <ul className="flex items-center space-x-4">
+          <ul className="flex flex-wrap items-center gap-2 md:gap-4">
             {navItems.map(([label, url]) => {
               const isActive = pathname === url;
               return (
                 <li key={label}>
                   <Button
                     onClick={() => router.push(url)}
-                    className={`px-4 py-2 text-white rounded-lg shadow-lg transition-transform duration-300 transform-gpu backdrop-blur-md ${
+                    className={`px-3 sm:px-4 py-2 text-white rounded-lg shadow-lg transition-transform duration-300 transform-gpu backdrop-blur-md ${
                       isActive
                         ? "bg-red-600/60 border border-red-500/70 scale-110"
                         : "hover:bg-red-600/60 hover:scale-110"
@@ -96,36 +94,37 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* PROFILE PANEL */}
-      <section className="relative z-10 max-w-[85%] mx-auto mt-40 md:mt-48 px-30 py-20 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10">
-        {/* LEFT TEXT */}
-        <div className="flex-1 flex flex-col space-y-6 pl-25">
-          <h1 className="text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-lg">
+      <section className="relative z-10 w-[92%] sm:w-[88%] md:w-[85%] mx-auto 
+        mt-40 md:mt-48 px-4 sm:px-6 md:px-10 lg:px-20 py-16 sm:py-20 
+        bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl 
+        flex flex-col md:flex-row items-center justify-between gap-10">
+
+        <div className="flex-1 flex flex-col space-y-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-lg">
             Contact Me
           </h1>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-200">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-200">
             Send me a message
           </h2>
 
-          <p className="text-gray-300 max-w-md">
-            Fill in your details and your message below. I’ll get back to you as soon as possible. You can also direct message me lygonzales@gmail.com or on my social media accounts.
+          <p className="text-gray-300 max-w-md text-sm sm:text-base md:text-lg">
+            Fill in your details and your message below. I’ll get back to you as soon as possible. 
+            You can also direct message me at lygonzales@gmail.com or on my social media accounts.
           </p>
 
-          {/* BACK BUTTON */}
           <Button
             onClick={() => router.push("/")}
-            className="w-fit mt-6 px-6 py-3 bg-red-600/30 border border-red-500/60 text-white rounded-lg shadow-lg hover:bg-red-600/60 transition duration-300 backdrop-blur-md"
+            className="w-fit mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 bg-red-600/30 border border-red-500/60 text-white rounded-lg shadow-lg hover:bg-red-600/60 transition duration-300 backdrop-blur-md"
           >
             Back
           </Button>
         </div>
 
-        {/* RIGHT SIDE CONTACT FORM */}
-        <div className="flex-1 flex justify-center">
+        <div className="flex-1 flex justify-center w-full">
           <form
             onSubmit={handleSubmit}
-            className="w-full max-w-md flex flex-col gap-4 bg-black/40 p-6 rounded-2xl border border-white/10 shadow-lg backdrop-blur-md"
+            className="w-full max-w-md flex flex-col gap-4 bg-black/40 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-lg backdrop-blur-md"
           >
             <input
               type="text"
@@ -166,6 +165,7 @@ export default function Contact() {
             </Button>
           </form>
         </div>
+
       </section>
     </div>
   );

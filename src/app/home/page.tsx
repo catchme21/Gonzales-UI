@@ -69,7 +69,11 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="relative z-10 max-w-[90%] sm:max-w-[85%] mx-auto mt-40 md:mt-48 px-4 sm:px-6 md:px-6 lg:px-6 py-16 sm:py-20 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-10">
+      <section className="relative z-10 w-[92%] sm:w-[88%] md:w-[85%] mx-auto mt-40 md:mt-48 
+        px-4 sm:px-6 md:px-6 lg:px-6 py-16 sm:py-20 
+        bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl 
+        flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-10">
+
         <div className="flex-1 flex flex-col space-y-4 sm:space-y-6 text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-lg">
             Home Page
@@ -85,14 +89,14 @@ export default function Home() {
 
           <Button
             onClick={() => router.push("/")}
-            className="w-fit mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 bg-red-600/30 border border-red-500/60 text-white rounded-lg shadow-lg hover:bg-red-600/60 transition duration-300 backdrop-blur-md"
+            className="w-fit mt-4 sm:mt-6 px-5 sm:px-6 py-2 sm:py-3 bg-red-600/30 border border-red-500/60 text-white rounded-lg shadow-lg hover:bg-red-600/60 transition duration-300 backdrop-blur-md mx-auto md:mx-0"
           >
             Back
           </Button>
         </div>
 
         <div className="flex-1 flex justify-center mt-8 md:mt-0">
-          <div className="w-48 sm:w-64 md:w-[420px] lg:w-[520px] xl:w-[600px] animate-float rounded-3xl overflow-visible shadow-2xl">
+          <div className="w-48 sm:w-64 md:w-[380px] lg:w-[450px] xl:w-[520px] animate-float rounded-3xl overflow-visible shadow-2xl">
             <Card className="p-0 rounded-2xl overflow-hidden shadow-2xl bg-black/40 border border-white/10">
               <CardContent className="relative aspect-[4/3] p-0">
                 <div
