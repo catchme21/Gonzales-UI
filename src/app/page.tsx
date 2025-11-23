@@ -19,7 +19,6 @@ export default function Main() {
 
   useEffect(() => {
     setHasMounted(true);
-
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -35,7 +34,6 @@ export default function Main() {
 
   return (
     <div className="w-full min-h-screen bg-black font-sans relative overflow-hidden">
-      {/* NAVBAR */}
       <div
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrollY > 50
@@ -45,10 +43,10 @@ export default function Main() {
       >
         <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
           <div className="flex items-center space-x-6">
-            <img 
-              src="/images/cat.jpg" 
-              alt="Logo" 
-              className="w-16 h-16 rounded-full object-cover" 
+            <img
+              src="/images/cat.jpg"
+              alt="Logo"
+              className="w-16 h-16 rounded-full object-cover"
             />
             <h1 className="text-4xl font-bold tracking-wide bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               MY PORTFOLIO
@@ -57,9 +55,7 @@ export default function Main() {
         </div>
       </div>
 
-      {/* PROFILE PANEL */}
       <section className="relative z-10 max-w-7xl mx-auto mt-48 md:mt-56 px-20 py-16 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10">
-        {/* LEFT TEXT */}
         <div className="flex-1 flex flex-col space-y-6">
           <h1 className="text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-lg">
             Welcome
@@ -77,13 +73,12 @@ export default function Main() {
           </Button>
         </div>
 
-        {/* Right Side Carousel */}
         <div className="flex-1 flex justify-center relative">
-          <div className="w-80 md:w-[420px] lg:w-[500px] animate-float rounded-3xl overflow-visible shadow-2xl">
-            <Carousel loop>
+            <div className="w-80 md:w-[420px] lg:w-[500px] animate-float rounded-3xl overflow-visible shadow-2xl">
+            <Carousel opts={{ loop: true }}>
               <CarouselContent>
-                {slides.map((slide, index) => (
-                  <CarouselItem key={index}>
+                {slides.map((slide) => (
+                  <CarouselItem key={slide}>
                     <Card className="p-0 rounded-2xl overflow-hidden shadow-2xl bg-black/40 border border-white/10 transform-gpu transition-transform duration-500 hover:scale-105">
                       <CardContent className="relative aspect-[4/3] p-0">
                         <div
@@ -97,10 +92,8 @@ export default function Main() {
                 ))}
               </CarouselContent>
 
-              {/* Carousel Previous Button */}
               <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full p-2 shadow-lg backdrop-blur-md transform-gpu transition-transform duration-300 hover:scale-110" />
 
-              {/* Carousel Next Button */}
               <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full p-2 shadow-lg backdrop-blur-md transform-gpu transition-transform duration-300 hover:scale-110" />
             </Carousel>
           </div>
