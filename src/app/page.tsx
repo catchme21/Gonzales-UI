@@ -55,13 +55,13 @@ export default function Main() {
         </div>
       </div>
 
-      <section className="relative z-10 max-w-7xl mx-auto mt-48 md:mt-56 px-20 py-16 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10">
-        <div className="flex-1 flex flex-col space-y-6">
-          <h1 className="text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-lg">
+      <section className="relative z-10 max-w-7xl mx-auto mt-48 md:mt-56 px-6 md:px-20 py-16 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="flex-1 flex flex-col space-y-6 text-center md:text-left">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-lg">
             Welcome
           </h1>
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-200">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-200">
             A NextJS Web Application
           </h2>
 
@@ -73,8 +73,8 @@ export default function Main() {
           </Button>
         </div>
 
-        <div className="flex-1 flex justify-center relative">
-            <div className="w-80 md:w-[420px] lg:w-[500px] animate-float rounded-3xl overflow-visible shadow-2xl">
+        <div className="flex-1 flex justify-center mt-10 md:mt-0">
+          <div className="w-64 sm:w-80 md:w-[420px] lg:w-[500px] animate-float rounded-3xl overflow-visible shadow-2xl">
             <Carousel opts={{ loop: true }}>
               <CarouselContent>
                 {slides.map((slide) => (
